@@ -1,0 +1,29 @@
+<form (submit)="onAddPost(postForm)" #postForm="ngForm">
+  <mat-card>
+    <mat-form-field>
+      <mat-label>Your Name(s):</mat-label>
+      <input type="text" name="name" matInput ngModel #name="ngModel" required minlength="2" maxlength="45"/>
+      <mat-error *ngIf="name.invalid">You can't create an empty name(s).</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>How did you learn about our brand?:</mat-label>
+      <textarea matInput rows="6" name="first_question" required ngModel #first_question="ngModel" maxlength="800"></textarea>
+      <mat-error *ngIf="first_question.invalid">You can't create an empty post.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Your Message:</mat-label>
+      <textarea matInput rows="6" name="second_question" required ngModel #second_question="ngModel" maxlength="800"></textarea>
+      <mat-error *ngIf="second_question.invalid">You can't create an empty post.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="mail@example.com" name="email" ngModel #email="ngModel" required email>
+      <mat-error *ngIf="email.invalid">Email address is invalid</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Save</button>
+  </mat-card>
+</form>
+
+
+
+
